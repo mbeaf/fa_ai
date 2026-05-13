@@ -20,9 +20,12 @@ export function ProjectSidebar({
     <aside
       className={cn(
         "fixed top-14 left-0 bottom-0 w-80 bg-card border-r transform transition-transform duration-300 ease-in-out z-40",
-        isOpen ? "translate-x-0" : "-translate-x-full",
+        isOpen ? "translate-x-0" : "-translate-x-full pointer-events-none",
         className
       )}
+      aria-hidden={!isOpen}
+      inert={!isOpen ? "" : undefined}
+      tabIndex={isOpen ? 0 : -1}
     >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b">

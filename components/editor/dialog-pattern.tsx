@@ -29,9 +29,11 @@ export function DialogPattern({
   children,
   showCloseButton = true,
 }: DialogPatternProps) {
+  const ariaLabel = title ? undefined : (description || "Dialog")
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent showCloseButton={showCloseButton}>
+      <DialogContent showCloseButton={showCloseButton} aria-label={ariaLabel}>
         {(title || description) && (
           <DialogHeader>
             {title && <DialogTitle>{title}</DialogTitle>}

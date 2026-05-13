@@ -15,7 +15,7 @@ export function EditorLayout({ children }: EditorLayoutProps) {
     <>
       <EditorNavbar
         isSidebarOpen={isSidebarOpen}
-        onSidebarToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+        onSidebarToggle={() => setIsSidebarOpen(prev => !prev)}
       />
       <ProjectSidebar
         isOpen={isSidebarOpen}
