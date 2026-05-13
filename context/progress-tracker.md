@@ -17,10 +17,13 @@ change.
 - lib/utils.ts with cn() helper
 - lucide-react installation
 - shadcn/ui initialization and configuration
+- Editor Navbar component (components/editor/editor-navbar.tsx)
+- Project Sidebar component (components/editor/project-sidebar.tsx)
+- Dialog Pattern component (components/editor/dialog-pattern.tsx)
 
 ## In Progress
 
-- None yet.
+- None
 
 ## Next Up
 
