@@ -28,6 +28,9 @@ change.
   - Created proxy.ts at project root for route protection
   - Updated / page to redirect authenticated users to /editor, unauthenticated to /sign-in
   - Added UserButton to editor navbar right section
+- Redesigned home page (`/`): landing page with hero section, feature cards, and CTA buttons for unauthenticated users; authenticated users still redirect to /editor
+- Redesigned auth pages: compact left-panel branding with smaller typography, Clerk appearance variables mapped to app CSS custom properties, tighter layout per feature spec
+- Fixed pre-existing type error in components/editor/project-sidebar.tsx (inert prop type)
 
 ## In Progress
 
