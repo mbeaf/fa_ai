@@ -70,6 +70,9 @@ export default function SignUpPage() {
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-base">
         <div className="w-full max-w-md">
           <SignUp
+            routing="path"
+            path="/sign-up"
+            signInUrl="/sign-in"
             appearance={{
               elements: {
                 rootBox: "w-full",
