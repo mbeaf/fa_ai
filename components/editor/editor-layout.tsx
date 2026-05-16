@@ -1,29 +1,22 @@
 "use client"
 
-import { useState } from "react"
 import { EditorNavbar } from "./editor-navbar"
-import { ProjectSidebar } from "./project-sidebar"
+import { useEditor } from "./editor-context"
 
 interface EditorLayoutProps {
   children: React.ReactNode
 }
 
 export function EditorLayout({ children }: EditorLayoutProps) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const { isSidebarOpen, toggleSidebar } = useEditor()
 
   return (
     <>
       <EditorNavbar
         isSidebarOpen={isSidebarOpen}
-        onSidebarToggle={() => setIsSidebarOpen(prev => !prev)}
+        onSidebarToggle={toggleSidebar}
       />
-      <ProjectSidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      />
-      <main className="pt-14">
-        {children}
-      </main>
+      <main className="pt-14">{children}</main>
     </>
   )
 }

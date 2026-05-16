@@ -44,8 +44,9 @@ export default function SignInPage() {
               speed of thought.
             </h1>
             <p className="text-base text-muted-foreground mb-12 leading-relaxed">
-              Describe your architecture in plain English. Ghost AI maps it to a
-              shared canvas your whole team can refine in real time.
+              Describe your architecture in plain English. FA AI maps it to a
+              shared canvas your whole team can refine in real time. shared
+              canvas your whole team can refine in real time.
             </p>
 
             <div className="space-y-8">

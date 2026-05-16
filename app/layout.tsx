@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { EditorLayout } from "@/components/editor/editor-layout";
+import { EditorProvider } from "@/components/editor/editor-context";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/ui/themes";
 
@@ -46,7 +47,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       >
         <body className="min-h-full flex flex-col">
-          <EditorLayout>{children}</EditorLayout>
+          <EditorProvider>
+            <EditorLayout>{children}</EditorLayout>
+          </EditorProvider>
         </body>
       </html>
     </ClerkProvider>

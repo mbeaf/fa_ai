@@ -35,6 +35,15 @@ change.
 - Redesigned sign-in/sign-up pages to match reference design: left panel with logo, hero heading "Design systems at the speed of thought", feature list with icons (AI Architecture Generation, Real-time Collaboration, Instant Spec Generation); right panel with customized Clerk form (social buttons, email input, cyan continue button, rounded card styling)
 - Fixed Clerk routing: added routing="path", path, and cross-link URLs (signUpUrl/signInUrl) to both Clerk components so Sign Up/Sign In links navigate correctly
 - Fixed pre-existing type error in components/editor/project-sidebar.tsx (inert prop type)
+- Editor Home Screen & Project Dialogs (feature-specs/04-project-dialogs.md):
+  - Editor home: centered heading, description, and New Project button (no card wrapper)
+  - Create Project dialog: name input with live slug preview that updates as user types
+  - Rename Project dialog: prefilled name, current name in description, auto-focus, Enter submits
+  - Delete Project dialog: destructive confirmation with red-styled confirm button
+  - Sidebar: project items with rename/delete actions (only for owned projects), mobile backdrop scrim
+  - useProjectDialogs hook: manages dialog state, form state, and loading state
+  - EditorContext: shared sidebar open/close state between navbar and page
+  - Mock project data only, no API calls
 
 ## In Progress
 

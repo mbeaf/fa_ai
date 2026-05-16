@@ -5,17 +5,20 @@ const features = [
   {
     icon: Sparkles,
     title: "AI Architecture Generation",
-    description: "Describe your system, AI maps it to nodes and edges on a live canvas.",
+    description:
+      "Describe your system, AI maps it to nodes and edges on a live canvas.",
   },
   {
     icon: Users,
     title: "Real-time Collaboration",
-    description: "Live cursors, presence indicators, and shared node editing across your team.",
+    description:
+      "Live cursors, presence indicators, and shared node editing across your team.",
   },
   {
     icon: FileText,
     title: "Instant Spec Generation",
-    description: "Export a complete Markdown technical spec directly from the canvas graph.",
+    description:
+      "Export a complete Markdown technical spec directly from the canvas graph.",
   },
 ];
 
@@ -28,7 +31,7 @@ export default function SignUpPage() {
         <div className="px-8 pt-6">
           <div className="flex items-center gap-3">
             <div className="size-6 rounded bg-accent-primary" />
-            <span className="text-lg font-semibold text-primary">Ghost AI</span>
+            <span className="text-lg font-semibold text-primary">Fa AI</span>
           </div>
         </div>
 
@@ -89,7 +92,8 @@ export default function SignUpPage() {
                   "bg-elevated border-border text-primary rounded-xl h-11",
                 formButtonPrimary:
                   "bg-accent-primary hover:bg-accent-primary/90 text-primary-foreground rounded-xl h-11 font-medium",
-                footerActionLink: "text-accent-primary hover:text-accent-primary/80",
+                footerActionLink:
+                  "text-accent-primary hover:text-accent-primary/80",
                 footerActionText: "text-muted-foreground text-sm",
                 identityPreviewText: "text-sm text-muted-foreground",
                 identityPreviewEditButton: "text-accent-primary",
