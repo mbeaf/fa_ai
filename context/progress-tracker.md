@@ -30,6 +30,7 @@ change.
   - Added UserButton to editor navbar right section
 - Redesigned home page (`/`): landing page with hero section, feature cards, and CTA buttons for unauthenticated users; authenticated users still redirect to /editor
 - Redesigned auth pages: compact left-panel branding with smaller typography, Clerk appearance variables mapped to app CSS custom properties, tighter layout per feature spec
+- Redesigned sign-in/sign-up pages to match reference design: left panel with logo, hero heading "Design systems at the speed of thought", feature list with icons (AI Architecture Generation, Real-time Collaboration, Instant Spec Generation); right panel with customized Clerk form (social buttons, email input, cyan continue button, rounded card styling)
 - Fixed pre-existing type error in components/editor/project-sidebar.tsx (inert prop type)
 
 ## In Progress
