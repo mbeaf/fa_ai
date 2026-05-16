@@ -24,7 +24,7 @@ export function ProjectSidebar({
         className
       )}
       aria-hidden={!isOpen}
-      inert={!isOpen ? "" : undefined}
+      inert={!isOpen ? true : undefined}
       tabIndex={isOpen ? 0 : -1}
     >
       {/* Header */}

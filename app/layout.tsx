@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { EditorLayout } from "@/components/editor/editor-layout";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/ui/themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +26,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <EditorLayout>{children}</EditorLayout>
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+        variables: {
+          colorBackground: "var(--background)",
+          colorText: "var(--foreground)",
+          colorTextSecondary: "var(--muted-foreground)",
+          colorInputBackground: "var(--input)",
+          colorInputText: "var(--foreground)",
+          colorPrimary: "var(--primary)",
+          colorDanger: "var(--destructive)",
+          borderRadius: "var(--radius)",
+          fontFamily: "var(--font-geist-sans)",
+        },
+      } as any}>
+      <html
+        lang="en"
+        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      >
+        <body className="min-h-full flex flex-col">
+          <EditorLayout>{children}</EditorLayout>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
