@@ -1,9 +1,12 @@
-import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server";
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-white text-black">
-      <div className="text-center text-4xl font-semibold">FA_AI</div>
-    </div>
-  );
+export default async function Home() {
+  const { userId } = await auth();
+
+  if (userId) {
+    redirect("/editor");
+  } else {
+    redirect("/sign-in");
+  }
 }

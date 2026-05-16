@@ -9,7 +9,7 @@ change.
 
 ## Current Goal
 
-- Design system implementation with shadcn/ui components
+- Clerk authentication integration
 
 ## Completed
 
@@ -20,6 +20,14 @@ change.
 - Editor Navbar component (components/editor/editor-navbar.tsx)
 - Project Sidebar component (components/editor/project-sidebar.tsx)
 - Dialog Pattern component (components/editor/dialog-pattern.tsx)
+- Clerk authentication integration:
+  - Installed @clerk/ui package
+  - Wrapped root layout with ClerkProvider using dark theme
+  - Created sign-in page with two-panel layout using Clerk components
+  - Created sign-up page with two-panel layout using Clerk components
+  - Created proxy.ts at project root for route protection
+  - Updated / page to redirect authenticated users to /editor, unauthenticated to /sign-in
+  - Added UserButton to editor navbar right section
 
 ## In Progress
 
@@ -27,17 +35,20 @@ change.
 
 ## Next Up
 
-- [First unit to build]
+- [Next feature unit to build]
 
 ## Open Questions
 
-- [Any unresolved product or technical decisions]
+- None
 
 ## Architecture Decisions
 
-- [Decisions made that affect the system design or
-  data model — include why the decision was made]
+- Used Clerk for authentication as specified in architecture.md
+- Used proxy.ts instead of middleware.ts for Clerk integration as specified in feature spec
+- Auth pages use CSS variables with no hardcoded colors as specified
 
 ## Session Notes
 
-- [Context needed to resume work in the next session]
+- Clerk integration completed per feature-specs/03-auth.md
+- All routes protected except /sign-in and /sign-up via proxy.ts
+- User authentication redirects implemented on home page
