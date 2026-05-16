@@ -22,13 +22,12 @@ export default async function Home() {
             AI-powered system design workspace
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-primary mb-6">
-            Design systems with{" "}
-            <span className="text-accent-primary">AI</span>
+            Design systems with <span className="text-accent-primary">AI</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-            Describe your architecture in plain English. Chost AI maps it onto a
-            shared canvas, your team refines it, and the app generates a technical
-            specification from the final graph.
+            Describe your architecture in plain English. Fa AI maps it onto a
+            shared canvas, your team refines it, and the app generates a
+            technical specification from the final graph.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" asChild>
@@ -55,8 +54,8 @@ export default async function Home() {
               Collaborative Canvas
             </h3>
             <p className="text-sm text-muted-foreground">
-              Real-time shared canvas with live cursors, presence indicators, and
-              node/edge editing for your whole team.
+              Real-time shared canvas with live cursors, presence indicators,
+              and node/edge editing for your whole team.
             </p>
           </Card>
           <Card className="p-6">
@@ -67,8 +66,8 @@ export default async function Home() {
               AI Generation
             </h3>
             <p className="text-sm text-muted-foreground">
-              Describe your system in natural language and let AI generate nodes,
-              edges, and structure into your canvas.
+              Describe your system in natural language and let AI generate
+              nodes, edges, and structure into your canvas.
             </p>
           </Card>
           <Card className="p-6">
