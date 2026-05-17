@@ -65,6 +65,7 @@ change.
 - Prisma client branches by DATABASE_URL: `prisma+postgres://` uses Accelerate (no adapter), otherwise uses `@prisma/adapter-pg`
 - Schema split into `prisma/schema.prisma` (generator + datasource) and `prisma/models/project.prisma` (models) via `source` directive
 - PrismaClient cached on `globalThis` in development to survive hot reloads
+- API routes use `auth()` from `@clerk/nextjs/server` to extract userId for owner checks
 
 ## Session Notes
 
@@ -75,3 +76,10 @@ change.
   - Project and ProjectCollaborator models with indexes and relations
   - lib/prisma.ts singleton with adapter-pg
   - Migration created and applied
+- Project API routes completed per feature-specs/06-project-apis.md:
+  - GET /api/projects — list owned projects (desc by createdAt)
+  - POST /api/projects — create project (default name: "Untitled Project")
+  - PATCH /api/projects/[projectId] — rename (owner-only, 403 for non-owner)
+  - DELETE /api/projects/[projectId] — delete (owner-only, 403 for non-owner)
+  - 401 returned for unauthenticated requests
+  - 404 returned when project not found
