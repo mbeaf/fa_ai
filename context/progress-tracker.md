@@ -62,9 +62,16 @@ change.
 - Used Clerk for authentication as specified in architecture.md
 - Used proxy.ts instead of middleware.ts for Clerk integration as specified in feature spec
 - Auth pages use CSS variables with no hardcoded colors as specified
+- Prisma client branches by DATABASE_URL: `prisma+postgres://` uses Accelerate (no adapter), otherwise uses `@prisma/adapter-pg`
+- Schema split into `prisma/schema.prisma` (generator + datasource) and `prisma/models/project.prisma` (models) via `source` directive
+- PrismaClient cached on `globalThis` in development to survive hot reloads
 
 ## Session Notes
 
 - Clerk integration completed per feature-specs/03-auth.md
 - All routes protected except /sign-in and /sign-up via proxy.ts
 - User authentication redirects implemented on home page
+- Prisma setup completed per feature-specs/05-prisma.md:
+  - Project and ProjectCollaborator models with indexes and relations
+  - lib/prisma.ts singleton with adapter-pg
+  - Migration created and applied
