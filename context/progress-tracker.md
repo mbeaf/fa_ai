@@ -9,7 +9,7 @@ change.
 
 ## Current Goal
 
-- Editor page and chrome components
+- Wire editor home to real project API
 
 ## Completed
 
@@ -83,3 +83,14 @@ change.
   - DELETE /api/projects/[projectId] — delete (owner-only, 403 for non-owner)
   - 401 returned for unauthenticated requests
   - 404 returned when project not found
+- Editor home wired to real API per feature-specs/07-wire-editor-home.md:
+  - Editor page is now a server component fetching projects via Prisma
+  - New EditorShell client component receives serialized projects and userId
+  - New useProjectActions hook manages dialog state, form state, API calls, and navigation
+  - Create dialog: name input managed by hook, Room ID preview with slug + random suffix, navigates to /editor/[id] on success
+  - Rename dialog: calls PATCH /api/projects/[id], updates local state
+  - Delete dialog: calls DELETE /api/projects/[id], refreshes via router.refresh()
+  - Sidebar: computes owned/shared via userId comparison, slug displayed from name
+  - Shared lib/slug.ts utility for slugify and generateRoomSuffix
+  - Mock data removed, old useProjectDialogs hook superseded by useProjectActions
+  - Rename dialog shows only name input (no slug preview) per spec

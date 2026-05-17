@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import { DialogPattern } from "./dialog-pattern"
-import type { Project } from "@/types/project"
+import { Button } from '@/components/ui/button'
+import { DialogPattern } from './dialog-pattern'
+import type { Project } from '@/types/project'
 
 interface DeleteProjectDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   project: Project | null
-  onDelete: (id: string) => void
+  onDelete: () => Promise<void>
   isCreating: boolean
 }
 
@@ -36,12 +36,10 @@ export function DeleteProjectDialog({
           </Button>
           <Button
             variant="destructive"
-            onClick={() => {
-              if (project) onDelete(project.id)
-            }}
+            onClick={onDelete}
             disabled={isCreating}
           >
-            {isCreating ? "Deleting..." : "Delete"}
+            {isCreating ? 'Deleting...' : 'Delete'}
           </Button>
         </>
       }

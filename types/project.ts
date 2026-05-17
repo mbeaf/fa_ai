@@ -1,7 +1,10 @@
 export interface Project {
   id: string
   name: string
-  slug: string
   ownerId: string
-  isOwned: boolean
+  description: string | null
+  status: 'DRAFT' | 'ARCHIVED'
+  canvasJsonPath: string | null
+  createdAt: string
+  updatedAt: string
 }
